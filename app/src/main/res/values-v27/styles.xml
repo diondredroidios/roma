@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_dark</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">@color/window_background_dark</item>
+        <item name="android:navigationBarDividerColor">@color/status_divider_dark</item>
+    </style>
+
+    <!--Light Application Theme Styles-->
+    <style name="RomaTheme" parent="RomaBaseTheme">
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:navigationBarColor">@color/color_background_light</item>
+        <item name="android:navigationBarDividerColor">@color/status_divider_light</item>
+    </style>
+
+</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mfcdev.roma">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- For notifications -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:maxSdkVersion="22"/> <!-- for day/night mode -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- For sending toots with foreground service -->
+
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name="com.mfcdev.roma.RomaApplication"
+        android:supportsRtl="true"
+        android:theme="@style/RomaTheme">
+
+        <activity
+            android:name="com.mfcdev.roma.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mfcdev.roma.SavedTootActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
+        <activity
+            android:name="com.mfcdev.roma.LoginActivity"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="${applicationId}"
+                    android:scheme="@string/oauth_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mfcdev.roma.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
+        <activity
+            android:name="com.mfcdev.roma.ComposeActivity"
+            android:theme="@style/RomaDialogActivityTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mfcdev.roma.ViewThreadActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name="com.mfcdev.roma.ViewTagActivity" />
+        <activity android:name="com.mfcdev.roma.ViewMediaActivity"
+            android:theme="@style/RomaBaseTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity android:name="com.mfcdev.roma.AccountActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity android:name="com.mfcdev.roma.EditProfileActivity" />
+        <activity android:name="com.mfcdev.roma.PreferencesActivity" />
+        <activity android:name="com.mfcdev.roma.FavouritesActivity" />
+        <activity android:name="com.mfcdev.roma.AccountListActivity" />
+        <activity android:name="com.mfcdev.roma.AboutActivity" />
+        <activity
+            android:name="com.mfcdev.roma.ReportActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name="com.mfcdev.roma.SearchActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name="com.mfcdev.roma.ListsActivity" />
+        <activity android:name="com.mfcdev.roma.ModalTimelineActivity" />
+        <activity android:name="com.mfcdev.roma.LicenseActivity" />
+
+        <receiver android:name="com.mfcdev.roma.receiver.NotificationClearBroadcastReceiver" />
+
+        <receiver
+            android:name="com.mfcdev.roma.receiver.SendStatusBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            tools:targetApi="24"
+            android:name="com.mfcdev.roma.service.RomaTileService"
+            android:icon="@drawable/ic_roma"
+            android:label="Compose Toot"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service android:name="com.mfcdev.roma.service.SendTootService" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
