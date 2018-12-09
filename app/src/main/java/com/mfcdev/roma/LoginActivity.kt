@@ -31,6 +31,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 import com.mfcdev.roma.db.AccountManager
 import com.mfcdev.roma.di.Injectable
 import com.mfcdev.roma.entity.AccessToken
@@ -67,6 +69,8 @@ class LoginActivity : AppCompatActivity(), Injectable {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        checkForGooglePlayServices()
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
         val theme = preferences.getString("appTheme", ThemeUtils.APP_THEME_DEFAULT)
@@ -107,9 +111,24 @@ class LoginActivity : AppCompatActivity(), Injectable {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        checkForGooglePlayServices()
+    }
+
+    fun checkForGooglePlayServices() {
+        var connectionResult = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this)
+        if (connectionResult == ConnectionResult.SERVICE_MISSING
+                || connectionResult == ConnectionResult.SERVICE_DISABLED
+                || connectionResult == ConnectionResult.SERVICE_INVALID) {
+            GoogleApiAvailability.getInstance().makeGooglePlayServicesAvailable(this);
+        }
+    }
+
     override fun finish() {
         super.finish()
-        if(isAdditionalLogin()) {
+        if (isAdditionalLogin()) {
             overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right)
         }
     }

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "499392849398",
+    "firebase_url": "https://romafcm-77231.firebaseio.com",
+    "project_id": "romafcm-77231",
+    "storage_bucket": "romafcm-77231.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499392849398:android:e7cc8c8cd4a6d169",
+        "android_client_info": {
+          "package_name": "com.mfcdev.roma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499392849398-pu3vcnbl5ib4lnqtvi6hh9ab7rg22j8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmMKh4aJX_6DniDaiWSqWU5qG2-KPz2Wc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -130,6 +130,12 @@
         </service>
         <service android:name="com.mfcdev.roma.service.SendTootService" />
 
+        <service android:name=".service.RomaFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
