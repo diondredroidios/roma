@@ -88,15 +88,6 @@ class LoginActivity : AppCompatActivity(), Injectable {
 
         loginButton.setOnClickListener { onButtonClick() }
 
-        whatsAnInstanceTextView.setOnClickListener {
-            val dialog = AlertDialog.Builder(this)
-                    .setMessage(R.string.dialog_whats_an_instance)
-                    .setPositiveButton(R.string.action_close, null)
-                    .show()
-            val textView = dialog.findViewById<TextView>(android.R.id.message)
-            textView.movementMethod = LinkMovementMethod.getInstance()
-        }
-
         if (isAdditionalLogin()) {
             setSupportActionBar(toolbar)
             supportActionBar?.setDisplayHomeAsUpEnabled(true)

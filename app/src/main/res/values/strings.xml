@@ -65,7 +65,7 @@
     <string name="action_favourite">Favourite</string>
     <string name="action_more">More</string>
     <string name="action_compose">Compose</string>
-    <string name="action_login">Login with Mastodon</string>
+    <string name="action_login">Login</string>
     <string name="action_logout">Log Out</string>
     <string name="action_logout_confirm">Are you sure you want to log out of the account %1$s?</string>
     <string name="action_follow">Follow</string>
@@ -124,7 +124,7 @@
     <string name="status_sent">Sent!</string>
     <string name="status_sent_long">Reply sent successfully.</string>
 
-    <string name="hint_domain">Which instance?</string>
+    <string name="hint_domain">Which social network?</string>
     <string name="hint_compose">What\'s happening?</string>
     <string name="hint_content_warning">Content warning</string>
     <string name="hint_display_name">Display name</string>
@@ -250,6 +250,9 @@
 
     <string name="about_title_activity">About</string>
     <string name="about_roma_version">Roma %s</string>
+    <string name="about_roma_license">Roma is free Open-Source Software.
+        It is released under the GNU General Public License Version 3.
+        You can read the license here: https://www.gnu.org/licenses/gpl-3.0.html</string>
     <string name="about_roma_description">Roma is an Android client for Pleroma based on Tusky.</string>
     <!-- note to translators:
          * you should think of “free” as in “free speech,” not as in “free beer”.
