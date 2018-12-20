@@ -218,7 +218,7 @@ public class NotificationsFragment extends SFragment implements
 
     private void setupNothingView() {
         Drawable top = AppCompatResources.getDrawable(Objects.requireNonNull(getContext()),
-                R.drawable.elephant_friend_empty);
+                R.drawable.friend_empty);
         nothingMessageView.setCompoundDrawablesWithIntrinsicBounds(null, top, null, null);
         nothingMessageView.setVisibility(View.GONE);
     }

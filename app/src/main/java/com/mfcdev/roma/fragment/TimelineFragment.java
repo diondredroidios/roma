@@ -436,7 +436,7 @@ public class TimelineFragment extends SFragment implements
     }
 
     private void setupNothingView() {
-        Drawable top = AppCompatResources.getDrawable(requireContext(), R.drawable.elephant_friend_empty);
+        Drawable top = AppCompatResources.getDrawable(requireContext(), R.drawable.friend_empty);
         nothingMessageView.setCompoundDrawablesWithIntrinsicBounds(null, top, null, null);
         nothingMessageView.setVisibility(View.GONE);
     }

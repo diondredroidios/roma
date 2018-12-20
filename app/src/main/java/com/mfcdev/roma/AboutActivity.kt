@@ -31,13 +31,7 @@ class AboutActivity : BottomSheetActivity(), Injectable {
 
         versionTextView.text = getString(R.string.about_roma_version, BuildConfig.VERSION_NAME)
 
-        aboutLicenseInfoTextView.setClickableTextWithoutUnderlines(R.string.about_roma_license)
-        aboutWebsiteInfoTextView.setClickableTextWithoutUnderlines(R.string.about_project_site)
-        aboutBugsFeaturesInfoTextView.setClickableTextWithoutUnderlines(R.string.about_bug_feature_request_site)
-
-        romaProfileButton.setOnClickListener {
-            onAccountButtonClick()
-        }
+        aboutLicenseInfoTextView.setClickableTextWithoutUnderlines(R.string.about_roma_description)
 
         aboutLicensesButton.setOnClickListener {
             startActivityWithSlideInAnimation(Intent(this, LicenseActivity::class.java))
