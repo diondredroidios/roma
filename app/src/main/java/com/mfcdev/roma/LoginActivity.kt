@@ -31,6 +31,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import com.crashlytics.android.Crashlytics
 import com.mfcdev.roma.db.AccountManager
 import com.mfcdev.roma.di.Injectable
 import com.mfcdev.roma.entity.AccessToken
@@ -38,6 +39,7 @@ import com.mfcdev.roma.entity.AppCredentials
 import com.mfcdev.roma.network.MastodonApi
 import com.mfcdev.roma.util.CustomTabsHelper
 import com.mfcdev.roma.util.ThemeUtils
+import io.fabric.sdk.android.Fabric
 import kotlinx.android.synthetic.main.activity_login.*
 import okhttp3.HttpUrl
 import retrofit2.Call
@@ -67,6 +69,9 @@ class LoginActivity : AppCompatActivity(), Injectable {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // init Fabric
+        Fabric.with(this, Crashlytics());
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this)
         val theme = preferences.getString("appTheme", ThemeUtils.APP_THEME_DEFAULT)

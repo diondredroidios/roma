@@ -19,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/RomaTheme">
 
+        <!-- Fabric API key-->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="f5962bea6e1eaa86ddff717677ff341e677618bb"
+            />
+
         <activity
             android:name="com.mfcdev.roma.SplashActivity"
             android:theme="@style/SplashTheme">
