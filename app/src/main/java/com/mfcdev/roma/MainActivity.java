@@ -366,6 +366,7 @@ public final class MainActivity extends BottomSheetActivity implements ActionBut
 
                     return false;
                 })
+                .withDrawerWidthDp(375)
                 .build();
 
         if (BuildConfig.DEBUG) {
