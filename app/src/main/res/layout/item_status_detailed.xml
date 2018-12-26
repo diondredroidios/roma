@@ -11,7 +11,7 @@
     android:paddingLeft="14dp"
     android:paddingRight="14dp">
 
-    <com.mfcdev.roma.view.RoundedImageView
+    <com.bigfig.roma.view.RoundedImageView
         android:id="@+id/status_avatar"
         android:layout_width="48dp"
         android:layout_height="48dp"

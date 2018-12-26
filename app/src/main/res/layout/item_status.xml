@@ -24,7 +24,7 @@
         android:textSize="?attr/status_text_medium"
         tools:text="ConnyDuck boosted" />
 
-    <com.mfcdev.roma.view.RoundedImageView
+    <com.bigfig.roma.view.RoundedImageView
         android:id="@+id/status_avatar"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -35,7 +35,7 @@
         android:scaleType="centerCrop"
         tools:src="@drawable/avatar_default" />
 
-    <com.mfcdev.roma.view.RoundedImageView
+    <com.bigfig.roma.view.RoundedImageView
         android:id="@+id/status_avatar_reblog"
         android:layout_width="24dp"
         android:layout_height="24dp"

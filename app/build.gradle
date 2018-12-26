@@ -20,18 +20,18 @@ def getGitSha = { ->
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.mfcdev.roma"
+        applicationId 'com.bigfig.roma'
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 51
-        versionName "4.0"
+        versionCode 57
+        versionName '1.0.3'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            multiDexEnabled true
             proguardFiles 'proguard-rules.pro'
         }
         debug { }
@@ -39,10 +39,10 @@ android {
 
     flavorDimensions "color"
     productFlavors {
-        blue { }
+        blue {}
         green {
             applicationIdSuffix ".test"
-            versionNameSuffix "-"+getGitSha()
+            versionNameSuffix "-" + getGitSha()
         }
     }
 
@@ -122,7 +122,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     implementation 'com.uber.autodispose:autodispose-android-archcomponents:1.0.0-RC3'
     implementation 'com.uber.autodispose:autodispose-ktx:1.0.0-RC3'
-
     compile('com.crashlytics.sdk.android:crashlytics:2.9.7@aar') {
         transitive = true;
     }

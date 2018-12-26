@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mfcdev.roma.EditProfileActivity">
+    tools:context="com.bigfig.roma.EditProfileActivity">
 
     <include layout="@layout/toolbar_basic" />
 
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp">
 
-                    <com.mfcdev.roma.view.RoundedImageView
+                    <com.bigfig.roma.view.RoundedImageView
                         android:id="@+id/avatarPreview"
                         android:layout_width="80dp"
                         android:layout_height="80dp"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.mfcdev.roma">
+    package="com.bigfig.roma">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -15,7 +15,7 @@
         android:allowBackup="false"
         android:icon="@mipmap/launcher_icon"
         android:label="@string/app_name"
-        android:name="com.mfcdev.roma.RomaApplication"
+        android:name="com.bigfig.roma.RomaApplication"
         android:supportsRtl="true"
         android:theme="@style/RomaTheme">
 
@@ -26,7 +26,7 @@
             />
 
         <activity
-            android:name="com.mfcdev.roma.SplashActivity"
+            android:name="com.bigfig.roma.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,11 +34,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mfcdev.roma.SavedTootActivity"
+            android:name="com.bigfig.roma.SavedTootActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
         <activity
-            android:name="com.mfcdev.roma.LoginActivity"
+            android:name="com.bigfig.roma.LoginActivity"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -52,11 +52,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mfcdev.roma.MainActivity"
+            android:name="com.bigfig.roma.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden">
         </activity>
         <activity
-            android:name="com.mfcdev.roma.ComposeActivity"
+            android:name="com.bigfig.roma.ComposeActivity"
             android:theme="@style/RomaDialogActivityTheme"
             android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
@@ -86,47 +86,47 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mfcdev.roma.ViewThreadActivity"
+            android:name="com.bigfig.roma.ViewThreadActivity"
             android:configChanges="orientation|screenSize" />
-        <activity android:name="com.mfcdev.roma.ViewTagActivity" />
-        <activity android:name="com.mfcdev.roma.ViewMediaActivity"
+        <activity android:name="com.bigfig.roma.ViewTagActivity" />
+        <activity android:name="com.bigfig.roma.ViewMediaActivity"
             android:theme="@style/RomaBaseTheme"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
-        <activity android:name="com.mfcdev.roma.AccountActivity"
+        <activity android:name="com.bigfig.roma.AccountActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"/>
-        <activity android:name="com.mfcdev.roma.EditProfileActivity" />
-        <activity android:name="com.mfcdev.roma.PreferencesActivity" />
-        <activity android:name="com.mfcdev.roma.FavouritesActivity" />
-        <activity android:name="com.mfcdev.roma.AccountListActivity" />
-        <activity android:name="com.mfcdev.roma.AboutActivity" />
+        <activity android:name="com.bigfig.roma.EditProfileActivity" />
+        <activity android:name="com.bigfig.roma.PreferencesActivity" />
+        <activity android:name="com.bigfig.roma.FavouritesActivity" />
+        <activity android:name="com.bigfig.roma.AccountListActivity" />
+        <activity android:name="com.bigfig.roma.AboutActivity" />
         <activity
-            android:name="com.mfcdev.roma.ReportActivity"
+            android:name="com.bigfig.roma.ReportActivity"
             android:windowSoftInputMode="stateVisible|adjustResize" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
-            android:name="com.mfcdev.roma.SearchActivity"
+            android:name="com.bigfig.roma.SearchActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
             <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
         </activity>
-        <activity android:name="com.mfcdev.roma.ListsActivity" />
-        <activity android:name="com.mfcdev.roma.ModalTimelineActivity" />
-        <activity android:name="com.mfcdev.roma.LicenseActivity" />
+        <activity android:name="com.bigfig.roma.ListsActivity" />
+        <activity android:name="com.bigfig.roma.ModalTimelineActivity" />
+        <activity android:name="com.bigfig.roma.LicenseActivity" />
 
-        <receiver android:name="com.mfcdev.roma.receiver.NotificationClearBroadcastReceiver" />
+        <receiver android:name="com.bigfig.roma.receiver.NotificationClearBroadcastReceiver" />
 
         <receiver
-            android:name="com.mfcdev.roma.receiver.SendStatusBroadcastReceiver"
+            android:name="com.bigfig.roma.receiver.SendStatusBroadcastReceiver"
             android:enabled="true"
             android:exported="false" />
 
         <service
             tools:targetApi="24"
-            android:name="com.mfcdev.roma.service.RomaTileService"
+            android:name="com.bigfig.roma.service.RomaTileService"
             android:icon="@drawable/ic_roma"
             android:label="Compose Toot"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -134,7 +134,7 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-        <service android:name="com.mfcdev.roma.service.SendTootService" />
+        <service android:name="com.bigfig.roma.service.SendTootService" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
